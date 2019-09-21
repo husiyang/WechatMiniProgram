@@ -1,4 +1,17 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello world</text>
-<button size="mini">按钮</button>
-<view>tag测试</view>
+<view>hello {{name}}<!-- Mustache语法 --></view>
+
+<!-- for循环 -->
+<view wx:for="{{students}}">{{item.name}}-{{item.age}}</view>
+<view wx:for="{{list}}">{{list.title}}</view>
+
+<!-- 事件监听改变data -->
+<view>当前:{{counter}}</view>
+<button size="mini" bindtap="numberInc">+</button>
+<button size="mini" bindtap="numberDec">-</button>
+
+<!-- 获取用户信息2 -->
+<button size="mini" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">获得授权</button>
+<!-- 展示用户信息 -->
+<open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data>
